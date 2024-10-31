@@ -1,8 +1,24 @@
-# React + Vite
+# MELD Token Checker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application to check MELD token and NFT eligibility for Telegram group access.
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Install dependencies:
+```npm install```
+
+2. Create `.env` file with your credentials:
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+VITE_WALLETCONNECT_PROJECT_ID=your_walletconnect_project_id
+Copy
+3. Run development server:
+```npm run dev```
+
+## Deploy
+
+```npm run deploy```
