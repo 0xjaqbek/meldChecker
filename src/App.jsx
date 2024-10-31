@@ -22,8 +22,14 @@ const meldChain = {
     symbol: 'gMELD',
   },
   rpcUrls: {
-    default: { http: ['https://subnets.avax.network/meld/mainnet/rpc'] },
-    public: { http: ['https://subnets.avax.network/meld/mainnet/rpc'] },
+    default: { 
+      http: ['https://subnets.avax.network/meld/mainnet/rpc'],
+      webSocket: ['wss://subnets.avax.network/meld/mainnet/ws']
+    },
+    public: { 
+      http: ['https://subnets.avax.network/meld/mainnet/rpc'],
+      webSocket: ['wss://subnets.avax.network/meld/mainnet/ws']
+    }
   },
   blockExplorers: {
     default: { name: 'MeldScan', url: 'https://meldscan.io' },
@@ -52,18 +58,39 @@ const metadata = {
 };
 
 const chains = [mainnet, meldChain];
-const wagmiConfig = defaultWagmiConfig({ 
-  chains, 
-  projectId, 
+
+const wagmiConfig = defaultWagmiConfig({
+  chains,
+  projectId,
   metadata,
-  ssr: false 
+  enableWalletConnect: true,
+  enableInjected: true,
+  enableEIP6963: true,
+  enableCoinbase: true,
+  ssr: false,
+  relayUrl: 'wss://relay.walletconnect.org',
+  featuredWalletIds: [
+    'c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96', // MetaMask
+    '4622a2b2d6af1c9844944291e5e7351a6aa24cd7b23099efac1b2fd875da31a0', // Trust
+    '225affb176778569276e484e1b92637ad061b01e13a048b35a9d280c3b58970f', // Safe
+  ]
 });
 
-createWeb3Modal({ 
-  wagmiConfig, 
-  projectId, 
+createWeb3Modal({
+  wagmiConfig,
+  projectId,
   chains,
-  themeMode: 'light'
+  defaultChain: mainnet,
+  themeMode: 'light',
+  themeVariables: {
+    '--w3m-z-index': '1000',
+    '--w3m-overlay-backdrop-filter': 'blur(6px)',
+  },
+  walletImages: {
+    // Add wallet images manually to avoid API calls
+    metamask: 'https://raw.githubusercontent.com/WalletConnect/walletconnect-assets/master/Icon/Gradient/Icon.png',
+    walletconnect: 'https://raw.githubusercontent.com/WalletConnect/walletconnect-assets/master/Icon/Gradient/Icon.png',
+  },
 });
 
 const TokenChecker = () => {
