@@ -88,7 +88,7 @@ const TokenChecker = () => {
     script.setAttribute('data-telegram-login', 'getDataForMeldBot');
     script.setAttribute('data-size', 'large');
     script.setAttribute('data-radius', '5');
-    script.setAttribute('data-auth-url', 'https://meldchecker.web.app');
+    script.setAttribute('data-auth-url', 'https://solanachecker.web.app');
     script.setAttribute('data-onauth', 'onTelegramAuth(user)');
     script.async = true;
 

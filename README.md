@@ -1,6 +1,6 @@
 # MELD Token Checker
 
-A web application to check MELD token and NFT eligibility for Telegram group access.
+A web application to check Solana Token by wallet balance for private Telegram group access with daily checks to kick out sellouts.
 
 ## Setup
 
