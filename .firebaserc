@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "solanachecker"
-  }
+    "default": "solanachecker",
+    "solanachecker": "solanachecker-ac022"
+  },
+  "targets": {},
+  "etags": {}
 }
