@@ -66,15 +66,14 @@ const wagmiConfig = defaultWagmiConfig({
   enableWalletConnect: true,
   enableInjected: true,
   enableEIP6963: true,
-  enableCoinbase: true,
-  ssr: false,
-  relayUrl: 'wss://relay.walletconnect.org',
   featuredWalletIds: [
     'c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96', // MetaMask
     '4622a2b2d6af1c9844944291e5e7351a6aa24cd7b23099efac1b2fd875da31a0', // Trust
     '225affb176778569276e484e1b92637ad061b01e13a048b35a9d280c3b58970f', // Safe
+    '0b415a746fb9ee99cce155c2ceca0c6f6061b1dbca2d722b3ba16381d0562150', // Phantom
   ]
 });
+
 
 createWeb3Modal({
   wagmiConfig,
@@ -87,9 +86,9 @@ createWeb3Modal({
     '--w3m-overlay-backdrop-filter': 'blur(6px)',
   },
   walletImages: {
-    // Add wallet images manually to avoid API calls
     metamask: 'https://raw.githubusercontent.com/WalletConnect/walletconnect-assets/master/Icon/Gradient/Icon.png',
     walletconnect: 'https://raw.githubusercontent.com/WalletConnect/walletconnect-assets/master/Icon/Gradient/Icon.png',
+    phantom: 'https://phantom.app/img/phantom-logo.png',
   },
 });
 
