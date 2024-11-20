@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "solanachecker",
+    "default": "solanachecker-ac022",
     "solanachecker": "solanachecker-ac022"
   },
   "targets": {},
